@@ -1,3 +1,4 @@
+import 'package:black_market/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -14,7 +15,7 @@ class GoldAppBar extends StatelessWidget
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
 
-          SvgPicture.asset("Assets/images/material-symbols_calculate.svg",height: 24,)
+          SvgPicture.asset(Assets.imagesMaterialSymbolsCalculate,height: 24,)
           ,Spacer(flex: 8,)
           ,Center(child: Text("الذهب",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),))
           ,Spacer(flex: 9,)

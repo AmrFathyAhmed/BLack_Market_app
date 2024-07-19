@@ -1,10 +1,9 @@
 import 'package:black_market/core/color.dart';
-import 'package:black_market/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class CustomCard extends StatelessWidget {
-  const CustomCard({Key? key}) : super(key: key);
+class CustomCardWithHeart extends StatelessWidget {
+  const CustomCardWithHeart({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,28 +31,44 @@ class CustomCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: Center(
-                          child: SvgPicture.asset("Assets/images/GoldShare.svg",
+                          child: SvgPicture.asset("Assets/images/hear-selectedt.svg",
                               width: 12)),
                     ),
                   ),
+
                   Spacer(
                     flex: 5,
                   ),
                   CircleAvatar(
                     radius: 26,
                     backgroundImage:
-                        AssetImage(Assets.imagesEllipse127),
+                    AssetImage("Assets/images/Test-bank.png"),
                   ),
                   Spacer(
-                    flex: 10,
-                  )
+                    flex: 5,
+
+                  ),
+                  Container(
+                    width: 26,
+                    height: 26,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.grey.withOpacity(.75), width: 1),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Center(
+                          child: SvgPicture.asset("Assets/images/GoldShare.svg",
+                              width: 12)),
+                    ),
+                  ),
                 ],
               ),
               SizedBox(
                 height: 10,
               ),
               Text(
-                "ذهب عيار 24",
+                "بنك مصر",
                 style: TextStyle(fontSize: 14),
               ),
               SizedBox(
@@ -75,7 +90,7 @@ class CustomCard extends StatelessWidget {
                       Text(
                         "31.25 ج.م",
                         style:
-                            TextStyle(fontSize: 9, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 9, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
@@ -100,7 +115,7 @@ class CustomCard extends StatelessWidget {
                       Text(
                         "30.24 ج.م",
                         style:
-                            TextStyle(fontSize: 9, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 9, fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
@@ -113,4 +128,3 @@ class CustomCard extends StatelessWidget {
     );
   }
 }
-

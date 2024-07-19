@@ -1,5 +1,5 @@
 import 'package:black_market/Features/Favorite/presentation/views/favorite_page.dart';
-import 'package:black_market/Features/Gold/presentation/views/gold_page.dart';
+import 'package:black_market/Features/Gold/presentation/views/gold_view_body.dart';
 import 'package:black_market/Features/Profile/presentation/views/profile_page.dart';
 import 'package:black_market/Features/home/presentation/Views/widgets/home_page_body.dart';
 import 'package:black_market/core/color.dart';
@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> body = const [
     ProfilePage(),
     FavoritePage(),
-    GoldPage(),
+    GoldViewBody(),
     HomePageBody(),
   ];
 

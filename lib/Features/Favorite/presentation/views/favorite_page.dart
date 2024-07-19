@@ -1,4 +1,5 @@
 import 'package:black_market/Features/Gold/presentation/views/widgets/custom-card.dart';
+import 'package:black_market/Features/Gold/presentation/views/widgets/custom_card_with_heart.dart';
 import 'package:black_market/Features/Profile/presentation/views/profile_page.dart';
 import 'package:flutter/material.dart';
 
