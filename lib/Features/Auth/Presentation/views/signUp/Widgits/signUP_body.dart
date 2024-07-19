@@ -37,8 +37,10 @@ class SignUPBody extends StatelessWidget {
           SizedBox(
             height: 36,
           ),
-          CustomBottom(bottomName: "  إنشاء حساب", color: ColorSelect.PColor)
-
+          CustomBottom(bottomName: "  إنشاء حساب", color: ColorSelect.PColor),
+          SizedBox(
+            height: 36,
+          ),
 
         ],
       ),

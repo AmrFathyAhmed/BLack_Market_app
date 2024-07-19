@@ -3,7 +3,7 @@ import 'package:black_market/Features/Auth/Presentation/views/login/widgits/cust
 import 'package:black_market/Features/Auth/Presentation/views/login/widgits/custom_bottom.dart';
 import 'package:black_market/Features/Auth/Presentation/views/login/widgits/lable_for_text_field.dart';
 import 'package:black_market/Features/Auth/Presentation/views/signUp/signUp_view.dart';
-import 'package:black_market/Features/home/presentation/Views/home/home_page.dart';
+import 'package:black_market/Features/home/presentation/Views/home_page.dart';
 import 'package:black_market/core/color.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

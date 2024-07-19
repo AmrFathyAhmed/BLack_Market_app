@@ -1,7 +1,7 @@
-import 'package:black_market/Features/home/presentation/Views/favorite_view/favorite_page.dart';
-import 'package:black_market/Features/home/presentation/Views/gold_view/gold_page.dart';
-import 'package:black_market/Features/home/presentation/Views/home/widgets/home_page_body.dart';
-import 'package:black_market/Features/home/presentation/Views/profile/profile_page.dart';
+import 'package:black_market/Features/Favorite/presentation/views/favorite_page.dart';
+import 'package:black_market/Features/Gold/presentation/views/gold_page.dart';
+import 'package:black_market/Features/Profile/presentation/views/profile_page.dart';
+import 'package:black_market/Features/home/presentation/Views/widgets/home_page_body.dart';
 import 'package:black_market/core/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

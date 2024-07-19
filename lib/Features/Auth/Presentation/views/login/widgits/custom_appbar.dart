@@ -1,3 +1,4 @@
+import 'package:black_market/generated/assets.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWithArrow extends StatelessWidget
@@ -30,7 +31,7 @@ final VoidCallback? onTap;
                     borderRadius: BorderRadius.circular(20),
                     color: Color(0xff2A2A2A)
                 ),
-                child: Image(image: AssetImage("Assets/images/Arrow - Left.png"),),
+                child: Image(image: AssetImage(Assets.imagesArrowLeft),),
               ),
             )
           ],

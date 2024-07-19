@@ -1,4 +1,5 @@
 import 'package:black_market/Features/Auth/Presentation/views/login/Login_view.dart';
+import 'package:black_market/generated/assets.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -38,7 +39,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           FadeTransition(
-              opacity: fadingAnimation, child: Image(image: AssetImage("Assets/images/image 1 (1).png"),)),
+              opacity: fadingAnimation, child: Image(image: AssetImage(Assets.imagesLogo),)),
         ],
       ),
     );

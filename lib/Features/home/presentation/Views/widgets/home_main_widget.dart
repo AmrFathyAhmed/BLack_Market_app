@@ -1,6 +1,7 @@
 
-import 'package:black_market/Features/home/presentation/Views/home/widgets/home_app_bar.dart';
-import 'package:black_market/Features/home/presentation/Views/home/widgets/home_main_widget_card.dart';
+
+import 'package:black_market/Features/home/presentation/Views/widgets/home_app_bar.dart';
+import 'package:black_market/Features/home/presentation/Views/widgets/home_main_widget_card.dart';
 import 'package:black_market/core/color.dart';
 import 'package:flutter/material.dart';
 

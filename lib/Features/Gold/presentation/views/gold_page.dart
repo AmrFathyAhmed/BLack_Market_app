@@ -1,7 +1,8 @@
-import 'package:black_market/Features/home/presentation/Views/gold_view/widgets/custom-card.dart';
-import 'package:black_market/Features/home/presentation/Views/gold_view/widgets/custom-drop-list-item.dart';
-import 'package:black_market/Features/home/presentation/Views/gold_view/widgets/custom-horizontal-list-view.dart';
-import 'package:black_market/Features/home/presentation/Views/gold_view/widgets/gold-app-bar.dart';
+import 'package:black_market/Features/Gold/presentation/views/widgets/custom-card.dart';
+import 'package:black_market/Features/Gold/presentation/views/widgets/custom-drop-list-item.dart';
+import 'package:black_market/Features/Gold/presentation/views/widgets/custom-horizontal-list-view.dart';
+import 'package:black_market/Features/Gold/presentation/views/widgets/gold-app-bar.dart';
+
 import 'package:black_market/core/color.dart';
 import 'package:flutter/material.dart';
 

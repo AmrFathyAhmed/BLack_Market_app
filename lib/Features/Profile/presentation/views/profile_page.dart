@@ -1,5 +1,5 @@
-import 'package:black_market/Features/home/presentation/Views/profile/widgits/logout-bottom.dart';
-import 'package:black_market/Features/home/presentation/Views/profile/widgits/profile-item.dart';
+import 'package:black_market/Features/Profile/presentation/views/widgets/logout-bottom.dart';
+import 'package:black_market/Features/Profile/presentation/views/widgets/profile-item.dart';
 import 'package:black_market/core/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
