@@ -1,6 +1,7 @@
 import 'package:black_market/Features/home/data/model/currency.dart';
 import 'package:black_market/Features/home/data/repo/home_repo_impl.dart';
 import 'package:black_market/Features/home/presentation/Views/widgets/currency_list_view_item.dart';
+import 'package:black_market/constant.dart';
 import 'package:black_market/core/color.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +44,7 @@ class CoinListWidget extends StatelessWidget {
                 future: HomeRepoImpl().fetchAllCurrency(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(child: CircularProgressIndicator());
+                    return Center(child: CircularProgressIndicator(color: ColorSelect.PColor,));
                   } else if (snapshot.hasError) {
                     return Center(child: Text('Error: ${snapshot.error}'));
                   } else if (snapshot.hasData) {
@@ -74,25 +75,20 @@ class CoinListWidget extends StatelessWidget {
   }
 }
 
-final List flagUrl = [
-  "https://flagcdn.com/au.svg",
-  "https://flagcdn.com/ca.svg",
-  "https://flagcdn.com/cn.svg",
-  "https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg",
-  "https://flagcdn.com/gb.svg",
-  "https://flagcdn.com/in.svg",
-  "https://flagcdn.com/jp.svg",
-  "https://flagcdn.com/ru.svg",
-  "https://flagcdn.com/us.svg"
-];
-final List currName = [
-  "الدولار الاسترالي",
-  "الدولار الكندي",
-  " اليوان الصيني",
-  "اليورو",
-  "الجنيه الاسترليني",
-  "الروبية الهندية",
-  "لين الياباني",
-  "الروبل الروسي",
-  " الدولار الأمريكي"
-];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

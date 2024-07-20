@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({Key? key}) : super(key: key);
+  const CustomCard({Key? key, required this.goldName, required this.sellPrice, required this.buyPrice}) : super(key: key);
+    final String goldName;
+    final double sellPrice;
+    final double buyPrice;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +56,7 @@ class CustomCard extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                "ذهب عيار 24",
+                "ذهب عيار $goldName",
                 style: TextStyle(fontSize: 14),
               ),
               SizedBox(
@@ -73,7 +76,7 @@ class CustomCard extends StatelessWidget {
                         height: 8,
                       ),
                       Text(
-                        "31.25 ج.م",
+                        "${sellPrice.toStringAsFixed(1)} ج.م",
                         style:
                             TextStyle(fontSize: 9, fontWeight: FontWeight.bold),
                       ),
@@ -98,7 +101,7 @@ class CustomCard extends StatelessWidget {
                         height: 8,
                       ),
                       Text(
-                        "30.24 ج.م",
+                        "${buyPrice.toStringAsFixed(1)} ج.م",
                         style:
                             TextStyle(fontSize: 9, fontWeight: FontWeight.bold),
                       ),
@@ -114,3 +117,13 @@ class CustomCard extends StatelessWidget {
   }
 }
 
+final List goldName=[
+  24,
+  22,
+  21,
+  20,
+  18,
+  16,
+  14,
+  10,
+];

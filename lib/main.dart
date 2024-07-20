@@ -1,4 +1,5 @@
 import 'package:black_market/Features/Splash/presentation/view/splash_view.dart';
+import 'package:black_market/Features/home/presentation/Views/home_page.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      home: SplashView(),
+      home: HomePage(),
     );
 
 

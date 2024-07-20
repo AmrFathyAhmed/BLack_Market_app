@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int currentIndex = 3;
+  int currentIndex = 2;
   List<Widget> body = const [
     ProfilePage(),
     FavoritePage(),
