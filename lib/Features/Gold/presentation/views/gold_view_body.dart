@@ -1,10 +1,10 @@
 import 'package:black_market/Features/Gold/data/models/category_tap_bar_model.dart';
-import 'package:black_market/Features/Gold/presentation/views/gold_view_body.dart';
 import 'package:black_market/Features/Gold/presentation/views/widgets/alloys_widget.dart';
 import 'package:black_market/Features/Gold/presentation/views/widgets/category_tab-bar.dart';
 import 'package:black_market/Features/Gold/presentation/views/widgets/currency_widget.dart';
 
 import 'package:black_market/Features/Gold/presentation/views/widgets/gold-app-bar.dart';
+import 'package:black_market/Features/Gold/presentation/views/widgets/gold_widget.dart';
 import 'package:flutter/material.dart';
 
 List<Category> categoryList = [
@@ -43,7 +43,7 @@ class _GoldViewBodyState extends State<GoldViewBody> {
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: ListView(
         children: [
-          GoldAppBar(),
+          const GoldAppBar(),
           // Assuming  have GoldAppBar widget
           CategoryTapBar(
             onCategorySelected: (category) {
@@ -53,7 +53,7 @@ class _GoldViewBodyState extends State<GoldViewBody> {
             },
           ),
 
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           selectedCategory != null
               ? categoryWidgetMap[selectedCategory!.title] ?? Container()
               : Container(),
@@ -62,5 +62,3 @@ class _GoldViewBodyState extends State<GoldViewBody> {
     );
   }
 }
-
-
