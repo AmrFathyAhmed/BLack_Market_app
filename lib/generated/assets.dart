@@ -38,7 +38,6 @@ class Assets {
   static const String imagesShare = 'Assets/images/share.svg';
   static const String imagesStroke1 = 'Assets/images/Stroke1.svg';
   static const String imagesTest = 'Assets/images/Test.png';
-  static const String imagesTestBank = 'Assets/images/Test-bank.png';
   static const String imagesTestBitcoin = 'Assets/images/Test-Bitcoin.png';
   static const String imagesUSAFlag = 'Assets/images/USA-flag.svg';
   static const String imagesVector = 'Assets/images/Vector.svg';

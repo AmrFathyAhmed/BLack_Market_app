@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "426301505270",
+    "project_id": "black-markt",
+    "storage_bucket": "black-markt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426301505270:android:54602f3076f327d4f5f6d7",
+        "android_client_info": {
+          "package_name": "com.example.black_market"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZHvREb-Cbu2uejsz57IqkLjaSLlHyEew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

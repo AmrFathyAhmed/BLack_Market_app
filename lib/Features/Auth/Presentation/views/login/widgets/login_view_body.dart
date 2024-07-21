@@ -9,15 +9,15 @@ import 'package:black_market/core/color.dart';
 import 'package:flutter/material.dart';
 
 class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({Key? key}) : super(key: key);
+  LoginViewBody({Key? key}) : super(key: key);
+  final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController emailController = TextEditingController();
+
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
-
-    final TextEditingController emailController = TextEditingController();
-
-    final TextEditingController passwordController = TextEditingController();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: SingleChildScrollView(
@@ -66,26 +66,22 @@ class LoginViewBody extends StatelessWidget {
                   return null;
                 },
               ),
-              // CheckBoxAndForgetPassWordSec(),
-
               CustomBottom(
                   bottomName: "تسجيل الدخول",
                   color: ColorSelect.PColor,
-                  onPressed: () {
-                    _formKey.currentState?.save();
+                  onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       try {
-                        AuthRepoImpl().login(
-                          email: emailController.text,
-                          password: passwordController.text,
-                        );
+                        await AuthRepoImpl().login(
+                            email: emailController.text,
+                            password: passwordController.text);
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => HomePage(),
                             ));
                       } on Exception catch (e) {
-                        print(e);
+                        print(e.toString());
                       }
                     }
                   }),

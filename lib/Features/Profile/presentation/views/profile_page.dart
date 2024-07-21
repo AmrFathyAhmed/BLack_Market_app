@@ -1,5 +1,11 @@
+import 'package:black_market/Features/Auth/Data/repo/auth_repo_impl.dart';
+import 'package:black_market/Features/Auth/Presentation/views/login/Login_view.dart';
+import 'package:black_market/Features/Profile/presentation/views/profile_page.dart';
+import 'package:black_market/Features/Profile/presentation/views/widgets/log_out_buttom_sheet.dart';
 import 'package:black_market/Features/Profile/presentation/views/widgets/logout-bottom.dart';
 import 'package:black_market/Features/Profile/presentation/views/widgets/profile-item.dart';
+import 'package:black_market/Features/Profile/presentation/views/widgets/text_app_bar.dart';
+import 'package:black_market/Features/home/presentation/Views/home_page.dart';
 import 'package:black_market/core/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -77,101 +83,23 @@ class ProfilePage extends StatelessWidget {
     );
   }
 }
-
-class TextAppBar extends StatelessWidget {
-  const TextAppBar({Key? key, required this.title}) : super(key: key);
-  final String title;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 24.0),
-          child: Text(
-            "$title",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-
 void _showBottomSheet(BuildContext context) {
   showModalBottomSheet(
-    context: context,backgroundColor: Colors.transparent,
+    context: context,
+    backgroundColor: Colors.transparent,
     builder: (BuildContext context) {
-      return Container(
-        decoration: BoxDecoration(color: ColorSelect.SColor
-            ,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(75) )),
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 28),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children:[
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(height: 50,),
-                    Container(
-                      width: 32,
-                      height: 32,
-                      decoration: BoxDecoration(
-                          color: Color(0xFFFF2A2A),
-                          borderRadius: BorderRadius.all(Radius.circular(12))
-
-                      ),
-                      child: SvgPicture.asset("Assets/images/Close Square.svg",),
-                    ),Spacer(flex: 1,)
-                  ],
-                ),
-                SizedBox(height: 24,),
-                Text("هل انت متأكد من تسجيل الخروج",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Color(0xFFFFFFFF)),)
-                ,SizedBox(height: 31,),
-                CircleAvatar(
-                  radius: 48,
-                  backgroundColor: Color(0xFFFF2A2A),
-                  child: SvgPicture.asset("Assets/images/Error-mark.svg"),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 31),
-                  child: Container(
-                    height: 1,
-                    width: double.infinity,
-                    color: Colors.white.withOpacity(.3),
-                  ),
-                ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal:50.0),
-                    child: Container(
-                      decoration: BoxDecoration(color: Color(0xFFFF2A2A),
-                      borderRadius: BorderRadius.circular(12)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 37.5,vertical: 12.5),
-                            child: Text("تسجيل الخروج",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16,),),
-                          ),
-                        ],
-                      ),
-
-
-                    ),
-                  ),
-                SizedBox(height: 37.5,)
-
-          ],
-            ),
-          ),
-        ),
+      return CustomBottomSheet(
+        title: "هل انت متأكد من تسجيل الخروج",
+        message: "تسجيل الخروج",
+        buttonText: "تسجيل الخروج",
+        onConfirm: () {
+         try {
+           AuthRepoImpl().signOut();
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
+         } on Exception catch (e) {
+           print(e.toString());
+         }
+        },
       );
     },
   );

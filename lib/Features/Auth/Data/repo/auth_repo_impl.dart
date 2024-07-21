@@ -5,13 +5,13 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<void> signUp({required String email, required String password}) async {
     try {
-      final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      final credential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      print ("SIGN UP SUCCESSFULY :${credential.user!.uid}");
+      print("SIGN UP SUCCESSFULY :${credential.user!.uid}");
       await FirebaseAuth.instance.currentUser?.sendEmailVerification();
-
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         print('The password provided is too weak.');
@@ -24,12 +24,14 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<void> login({required String email, required String password})async {
+  Future<void> login({required String email, required String password}) async {
     try {
-      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: email,
-          password: password
+      await FirebaseAuth.instance
+      .signInWithEmailAndPassword(
+        email: email,
+        password: password,
       );
+      ;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');
