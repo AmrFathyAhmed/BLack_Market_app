@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 class GoldRepoImpl {
   Future<List<Gold>> fetchAllGold() async {
-    final url = 'https://www.goldapi.io/api/XAU/EGP';
+    final url = '//https://www.goldapi.io/api/XAU/EGP';
     final headers = {'x-access-token': 'goldapi-bq8slyudf7hu-io'};
 
     try {

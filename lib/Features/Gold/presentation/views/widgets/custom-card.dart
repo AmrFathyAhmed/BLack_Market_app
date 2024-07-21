@@ -45,7 +45,7 @@ class CustomCard extends StatelessWidget {
                   CircleAvatar(
                     radius: 26,
                     backgroundImage:
-                        AssetImage(Assets.imagesEllipse127),
+                        AssetImage(Assets.imagesGoldImagejpg),
                   ),
                   Spacer(
                     flex: 10,

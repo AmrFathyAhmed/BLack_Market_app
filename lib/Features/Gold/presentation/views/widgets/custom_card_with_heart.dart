@@ -1,4 +1,5 @@
 import 'package:black_market/core/color.dart';
+import 'package:black_market/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -42,7 +43,7 @@ class CustomCardWithHeart extends StatelessWidget {
                   CircleAvatar(
                     radius: 26,
                     backgroundImage:
-                    AssetImage("Assets/images/Test-bank.png"),
+                    AssetImage(Assets.imagesBankImage),
                   ),
                   Spacer(
                     flex: 5,

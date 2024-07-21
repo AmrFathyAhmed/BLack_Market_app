@@ -1,4 +1,4 @@
-import 'package:black_market/Features/Auth/Presentation/views/login/widgits/login_view_body.dart';
+import 'package:black_market/Features/Auth/Presentation/views/login/widgets/login_view_body.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget

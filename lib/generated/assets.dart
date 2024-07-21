@@ -9,6 +9,7 @@ class Assets {
   static const String imagesArrowLeft = 'Assets/images/Arrow-Left.png';
   static const String imagesArrowRight2 = 'Assets/images/Arrow-Right2.svg';
   static const String imagesArrowUp = 'Assets/images/arrow-up.svg';
+  static const String imagesBankImage = 'Assets/images/BankImage.jpg';
   static const String imagesCalculatorBlue = 'Assets/images/CalculatorBlue.svg';
   static const String imagesCloseSquare = 'Assets/images/Close_Square.svg';
   static const String imagesDollarCircle = 'Assets/images/dollar-circle.svg';
@@ -17,6 +18,7 @@ class Assets {
   static const String imagesEllipse127 = 'Assets/images/Ellipse127.png';
   static const String imagesErrorMark = 'Assets/images/Error-mark.svg';
   static const String imagesFlagEgypt = 'Assets/images/flag-egypt.svg';
+  static const String imagesGoldImagejpg = 'Assets/images/goldImagejpg.jpg';
   static const String imagesGoldSelected = 'Assets/images/gold-selected.svg';
   static const String imagesGoldShare = 'Assets/images/GoldShare.svg';
   static const String imagesHearSelectedt = 'Assets/images/hear-selectedt.svg';
