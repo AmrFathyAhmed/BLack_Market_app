@@ -1,5 +1,6 @@
 import 'package:black_market/Features/Auth/Presentation/views/login/Login_view.dart';
 import 'package:black_market/generated/assets.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -20,6 +21,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initFadingAnimation();
+    goToNextView();
+
   }
 
 
@@ -32,35 +35,48 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   Widget build(BuildContext context) {
-    return Container(color:const Color(0xFFFEDC00),
+    return Container(color: const Color(0xFFFEDC00),
       child: Column(
 
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           FadeTransition(
-              opacity: fadingAnimation, child: Image(image: AssetImage(Assets.imagesLogo),)),
+              opacity: fadingAnimation,
+              child: Image(image: AssetImage(Assets.imagesLogo),)),
         ],
       ),
     );
   }
 
 //====================================================
-void initFadingAnimation() {
-  animationController = AnimationController(
-    vsync: this,
-    duration: const Duration(milliseconds: 600),
-  );
-  fadingAnimation =
-      Tween<double>(begin: 0.2, end: 1).animate(animationController);
-  animationController.repeat(reverse: true);
-  goToNextView();
-}
+  void initFadingAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 600),
+    );
+    fadingAnimation =
+        Tween<double>(begin: 0.2, end: 1).animate(animationController);
+    animationController.repeat(reverse: true);
+    goToNextView();
+  }
+
 //==================================================================
-void goToNextView() {
-  Future.delayed(const Duration(seconds: 3), () {
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage(),));
-  });
-}}
+  bool? isLogin;
 
+  void goToNextView() {
+    Future.delayed(const Duration(seconds: 3), () {
+      var user = FirebaseAuth.instance.currentUser;
+      if (user == null) {
+        isLogin = false;
+      } else {
+        isLogin = true;
+      }
+      Navigator.pushReplacementNamed(
+        context,
+        isLogin == false ? "LoginView" : "HomeView",
+      );
+    });
+  }
 
+}

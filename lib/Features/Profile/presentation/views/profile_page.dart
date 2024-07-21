@@ -89,9 +89,9 @@ void _showBottomSheet(BuildContext context) {
         title: "هل انت متأكد من تسجيل الخروج",
         message: "تسجيل الخروج",
         buttonText: "تسجيل الخروج",
-        onConfirm: () {
+        onConfirm: () async{
          try {
-           AuthRepoImpl().signOut();
+          await AuthRepoImpl().signOut();
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
          } on Exception catch (e) {
            print(e.toString());
