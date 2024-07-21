@@ -6,6 +6,7 @@ import 'package:black_market/Features/Auth/Presentation/views/login/widgets/labl
 import 'package:black_market/Features/Auth/Presentation/views/signUp/signUp_view.dart';
 import 'package:black_market/Features/home/presentation/Views/home_page.dart';
 import 'package:black_market/core/color.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginViewBody extends StatelessWidget {
@@ -37,10 +38,10 @@ class LoginViewBody extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
-              LabelForTextField(name: "البريد الإلكتروني"),
+              const LabelForTextField(name: "البريد الإلكتروني"),
               CustomTextField(
                 hint: 'أدخل البريد الإلكتروني',
                 isPassword: false,
@@ -71,20 +72,39 @@ class LoginViewBody extends StatelessWidget {
                   color: ColorSelect.PColor,
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
+                      print("Validation successful");
                       try {
-                        await AuthRepoImpl().login(
-                            email: emailController.text,
-                            password: passwordController.text);
+                        print("Attempting to sign in");
+                        print("Email: ${emailController.text}");
+                        print("Password: ${passwordController.text}");
+
+                        await FirebaseAuth.instance.signInWithEmailAndPassword(
+                          email: emailController.text,
+                          password: passwordController.text,
+                        );
+
+                        print("Sign-in successful");
+
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => HomePage(),
-                            ));
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ),
+                        );
+                      } on FirebaseAuthException catch (e) {
+                        if (e.code == 'user-not-found') {
+                          print('No user found for that email.');
+                        } else if (e.code == 'wrong-password') {
+                          print('Wrong password provided for that user.');
+                        } else {
+                          print('FirebaseAuthException: ${e.message}');
+                        }
                       } on Exception catch (e) {
-                        print(e.toString());
+                        print('Exception: ${e.toString()}');
                       }
                     }
-                  }),
+                  }
+              ),
               Padding(
                 padding: const EdgeInsets.only(top: 20, bottom: 32),
                 child: Row(

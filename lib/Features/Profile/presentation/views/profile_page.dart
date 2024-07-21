@@ -1,14 +1,11 @@
 import 'package:black_market/Features/Auth/Data/repo/auth_repo_impl.dart';
 import 'package:black_market/Features/Auth/Presentation/views/login/Login_view.dart';
-import 'package:black_market/Features/Profile/presentation/views/profile_page.dart';
 import 'package:black_market/Features/Profile/presentation/views/widgets/log_out_buttom_sheet.dart';
 import 'package:black_market/Features/Profile/presentation/views/widgets/logout-bottom.dart';
 import 'package:black_market/Features/Profile/presentation/views/widgets/profile-item.dart';
 import 'package:black_market/Features/Profile/presentation/views/widgets/text_app_bar.dart';
-import 'package:black_market/Features/home/presentation/Views/home_page.dart';
 import 'package:black_market/core/color.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
