@@ -11,11 +11,12 @@ class Assets {
   static const String imagesArrowUp = 'Assets/images/arrow-up.svg';
   static const String imagesBankImage = 'Assets/images/BankImage.jpg';
   static const String imagesCalculatorBlue = 'Assets/images/CalculatorBlue.svg';
+  static const String imagesCancel = 'Assets/images/cancel.png';
+  static const String imagesChecked = 'Assets/images/checked.png';
   static const String imagesCloseSquare = 'Assets/images/Close_Square.svg';
   static const String imagesDollarCircle = 'Assets/images/dollar-circle.svg';
   static const String imagesDollarCircleBold = 'Assets/images/dollar-circle-bold.svg';
   static const String imagesDollarCircleSelcted = 'Assets/images/dollar-circle-selcted.svg';
-  static const String imagesEllipse127 = 'Assets/images/Ellipse127.png';
   static const String imagesErrorMark = 'Assets/images/Error-mark.svg';
   static const String imagesFlagEgypt = 'Assets/images/flag-egypt.svg';
   static const String imagesGoldImagejpg = 'Assets/images/goldImagejpg.jpg';
