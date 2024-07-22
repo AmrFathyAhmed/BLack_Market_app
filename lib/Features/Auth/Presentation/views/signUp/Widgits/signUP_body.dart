@@ -1,4 +1,3 @@
-import 'package:black_market/Features/Auth/Data/repo/auth_repo_impl.dart';
 import 'package:black_market/Features/Auth/Presentation/manager/sign_up_cubit/sign_up_cubit.dart';
 import 'package:black_market/Features/Auth/Presentation/manager/sign_up_cubit/sign_up_state.dart';
 import 'package:black_market/Features/Auth/Presentation/views/login/Login_view.dart';
@@ -11,10 +10,8 @@ import 'package:black_market/core/color.dart';
 import 'package:black_market/core/widget/dailog_message.dart';
 import 'package:black_market/core/widget/loading.dart';
 import 'package:black_market/generated/assets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class SignUPBody extends StatelessWidget {
   const SignUPBody({Key? key}) : super(key: key);
@@ -31,7 +28,7 @@ class SignUPBody extends StatelessWidget {
 
     final TextEditingController confirmPasswordController =
         TextEditingController();
-    return BlocConsumer<SignUpCubit,SignUpState>(
+    return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpSuccess) {
           showDialog(
@@ -61,9 +58,9 @@ class SignUPBody extends StatelessWidget {
         }
       },
       builder: (context, state) {
-        if(state is SignUpLoading){
+        if (state is SignUpLoading) {
           return const CustomLoadingAnimation();
-        }else {
+        } else {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 18.0),
             child: Form(
@@ -128,23 +125,25 @@ class SignUPBody extends StatelessWidget {
                   ),
                   SizedBox(height: 36),
                   CustomBottom(
-                    bottomName: "  إنشاء حساب",
-                    color: ColorSelect.PColor,
-                    onPressed: () {
-                      _formKey.currentState?.save();
-                      if (_formKey.currentState!.validate()) {
-                        try {} on Exception catch (e) {
-                          print(e);
+                      bottomName: "  إنشاء حساب",
+                      color: ColorSelect.PColor,
+                      onPressed: () async {
+                        _formKey.currentState?.save();
+                        if (_formKey.currentState!.validate()) {
+                          await BlocProvider.of<SignUpCubit>(context).signUp(
+                            emailController.text,
+                            passwordController.text,
+                            nameController.text,
+                          );
                         }
-                      }
-                    },
-                  ),
+                      }),
                   SizedBox(height: 36),
                 ],
               ),
             ),
           );
-        }},
+        }
+      },
     );
   }
 }

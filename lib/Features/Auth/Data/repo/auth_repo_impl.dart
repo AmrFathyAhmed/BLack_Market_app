@@ -15,11 +15,16 @@ class AuthRepoImpl extends AuthRepo {
 
 
     if (userCredential != null) {
-      await FirebaseFirestore.instance.collection("Users").doc("${email}").set({
-        "UserName": "$name",
-        "UserEmail": "$email",
-        "UserPassword": "$password",
-      });
+
+      try {
+        await FirebaseFirestore.instance.collection("Users").doc("${email}").set({
+          "UserName": "$name",
+          "UserEmail": "$email",
+          "UserPassword": "$password",
+        });
+      } on Exception catch (e) {
+        print("ERROR : ${e.toString()}");
+      }
       await userCredential.user?.sendEmailVerification();
     }
     return userCredential;
