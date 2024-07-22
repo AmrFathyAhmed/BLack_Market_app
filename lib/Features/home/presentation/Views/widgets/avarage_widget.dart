@@ -27,7 +27,7 @@ class AverageWidget extends StatelessWidget {
                     ,SizedBox(
                       height: 12,
                     ),
-                    Text("31.25 ج.م",style: TextStyle(color: Color(0xFF0E0E0E),fontWeight: FontWeight.bold,fontSize: 10),)],
+                    Text("48.56 ج.م",style: TextStyle(color: Color(0xFF0E0E0E),fontWeight: FontWeight.bold,fontSize: 10),)],
                 ),
 
                 Container(
@@ -41,7 +41,7 @@ class AverageWidget extends StatelessWidget {
                     ,SizedBox(
                       height: 12,
                     ),
-                    Text("30.24 ج.م",style: TextStyle(color: Color(0xFF0E0E0E),fontSize: 10,fontWeight: FontWeight.bold),)],
+                    Text("48.95 ج.م",style: TextStyle(color: Color(0xFF0E0E0E),fontSize: 10,fontWeight: FontWeight.bold),)],
                 ),
                 Container(
                   height: 25,

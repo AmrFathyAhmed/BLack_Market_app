@@ -36,7 +36,7 @@ class CurrencyListViewItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width*.34,
+                  width: MediaQuery.of(context).size.width*.3,
                   child: Text(
                     "$name / $shortName",
                     style: TextStyle(fontSize: 13),overflow: TextOverflow.ellipsis,textAlign: TextAlign.end,

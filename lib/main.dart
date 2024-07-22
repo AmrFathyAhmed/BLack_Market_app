@@ -1,6 +1,7 @@
 import 'package:black_market/Features/Auth/Presentation/manager/login_cubit/login_cubit.dart';
 import 'package:black_market/Features/Auth/Presentation/manager/sign_up_cubit/sign_up_cubit.dart';
 import 'package:black_market/Features/Auth/Presentation/views/login/Login_view.dart';
+import 'package:black_market/Features/Gold/presentation/manger/gold_cubit/gold_cubit.dart';
 import 'package:black_market/Features/Splash/presentation/view/splash_view.dart';
 import 'package:black_market/Features/home/presentation/Views/home_page.dart';
 import 'package:black_market/Features/home/presentation/manager/currency_cubit/currency_cubit.dart';
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
       BlocProvider(create: (context) => LoginCubit(),),
      BlocProvider(create: (context) => SignUpCubit(),),
      BlocProvider(create: (context) => CurrencyCubit()..fetchAllCurrency()),
-    ],
+     BlocProvider(create: (context) => GoldCubit()..fetchAllGold(),
+     )],
       child: MaterialApp(
         routes: {
           "HomeView": (context) => const HomePage(),

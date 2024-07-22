@@ -34,7 +34,7 @@ class _GoldViewBodyState extends State<GoldViewBody> {
     super.initState();
 
     selectedCategory =
-        categoryList.firstWhere((category) => category.title == "العملات");
+        categoryList.firstWhere((category) => category.title == "الذهب");
   }
 
   @override

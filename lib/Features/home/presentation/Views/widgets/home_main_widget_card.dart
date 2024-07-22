@@ -42,7 +42,7 @@ class HomeMainWidgetCard extends StatelessWidget {
                       ,SizedBox(
                         height: 14,
                       ),
-                      Text("40 ج.م",style: TextStyle(color: Color(0xFFBFA500),fontWeight: FontWeight.bold,fontSize: 10),)],
+                      Text("56.34 ج.م",style: TextStyle(color: Color(0xFFBFA500),fontWeight: FontWeight.bold,fontSize: 10),)],
                   ),
 
                   Container(
@@ -69,7 +69,7 @@ class HomeMainWidgetCard extends StatelessWidget {
                       ,SizedBox(
                         height: 14,
                       ),
-                      Text("30.24 ج.م",style: TextStyle(color: Colors.black,fontSize: 10),)],
+                      Text("48.56 ج.م",style: TextStyle(color: Colors.black,fontSize: 10),)],
                   ),
 
 
