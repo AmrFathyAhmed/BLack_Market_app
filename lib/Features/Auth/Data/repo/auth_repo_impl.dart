@@ -8,7 +8,7 @@ class AuthRepoImpl extends AuthRepo {
       String name, String email, password, ) async {
     final userCredential =
     await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: email!,
+      email: email,
       password: password!,
     );
 

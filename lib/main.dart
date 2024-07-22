@@ -3,6 +3,7 @@ import 'package:black_market/Features/Auth/Presentation/manager/sign_up_cubit/si
 import 'package:black_market/Features/Auth/Presentation/views/login/Login_view.dart';
 import 'package:black_market/Features/Splash/presentation/view/splash_view.dart';
 import 'package:black_market/Features/home/presentation/Views/home_page.dart';
+import 'package:black_market/Features/home/presentation/manager/currency_cubit/currency_cubit.dart';
 import 'package:black_market/firebase_options.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
@@ -32,11 +33,13 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(providers: [
       BlocProvider(create: (context) => LoginCubit(),),
      BlocProvider(create: (context) => SignUpCubit(),),
+     BlocProvider(create: (context) => CurrencyCubit()..fetchAllCurrency()),
     ],
       child: MaterialApp(
         routes: {
           "HomeView": (context) => const HomePage(),
           "LoginView": (context) => const LoginPage(),
+
         },
         theme: ThemeData(
           brightness: Brightness.dark,

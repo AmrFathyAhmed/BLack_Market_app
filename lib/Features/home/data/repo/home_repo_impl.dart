@@ -6,7 +6,7 @@ import 'package:black_market/Features/home/data/repo/home_repo.dart';
 class HomeRepoImpl extends HomeRepo {
   @override
   Future<List<Currency>> fetchAllCurrency() async {
-    Uri url = Uri.parse("//https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_0yCfaMUHLPxIyZYyAptQSNfGRYRNONrlPL9vcJ3k&currencies=USD%2CEUR%2CCAD%2CJPY%2CRUB%2CAUD%2CCNY%2CINR%2CGBP");
+    Uri url = Uri.parse("https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_0yCfaMUHLPxIyZYyAptQSNfGRYRNONrlPL9vcJ3k&currencies=USD%2CEUR%2CCAD%2CJPY%2CRUB%2CAUD%2CCNY%2CINR%2CGBP");
     http.Response response = await http.get(url);
 
     if (response.statusCode == 200) {
