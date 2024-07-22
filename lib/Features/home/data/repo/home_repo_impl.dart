@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:http/http.dart' as http;
 import 'package:black_market/Features/home/data/model/currency.dart';
 import 'package:black_market/Features/home/data/repo/home_repo.dart';
@@ -18,4 +20,24 @@ class HomeRepoImpl extends HomeRepo {
       throw Exception('Failed to load currencies');
     }
   }
+
+  @override
+  Future<String> getUserData() async {
+      User? currentUser = FirebaseAuth.instance.currentUser;
+      CollectionReference userInfo =
+      FirebaseFirestore.instance.collection("Users");
+      QuerySnapshot querySnapshot = await userInfo
+          .where("UserEmail", isEqualTo: "${currentUser?.email}")
+          .get();
+
+      if (querySnapshot.size > 0) {
+        var data = querySnapshot.docs[0].data() as Map<String, dynamic>;
+
+         var name = data["UserName"] ?? "Unknown";
+
+     return name;
+      }
+      return "";
+    }
+
 }
